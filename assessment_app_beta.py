@@ -9,7 +9,7 @@ st.write('This is a prototype of a Streamlit app for exploring collections asses
 
 # Load CSV with st.file_uploader()
 
-sample_file = "https://raw.githubusercontent.com/adgray987/collections-assessment-eda/635a8e8c27fd4634ed889cfbb30f0c0a201c3519/data_raw/assessment_list_report.csv"
+sample_file = "https://raw.githubusercontent.com/adgray987/collections-assessment-eda/main/data_raw/assessment_list_report.csv"
 data = pd.read_csv(sample_file, header=3)
 
 
