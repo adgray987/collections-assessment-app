@@ -13,19 +13,19 @@ intro_url = "https://raw.githubusercontent.com/adgray987/collections-assessment-
 conclusion_url = "https://raw.githubusercontent.com/adgray987/collections-assessment-app/main/conclusion_text.txt"
 
 #---Title and intro text
-def get_text(url):
-    response = requests.get(url)
-    content = response.text
-    content_string = f"{content}"
-    return(content_string)
+##def get_text(url):
+##    response = requests.get(url)
+##    content = response.text
+##    content_string = f"{content}"
+##    return(content_string)
 
 st.title("Assessment Snapshot")
 st.subheader("Assessment Snapshot is a tool for exploring collections assessment data exported from ArchivesSpace.")
-
-intro = get_text(intro_url)
-st.markdown(intro)
-conclusion = get_text(conclusion_url)
-st.markdown(conclusion)
+##
+##intro = get_text(intro_url)
+##st.markdown(intro)
+##conclusion = get_text(conclusion_url)
+##st.markdown(conclusion)
 
 #---Get data
 data = pd.read_csv(sample_file, header=3)
