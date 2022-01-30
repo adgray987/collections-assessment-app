@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import altair as alt
-import requests
+##import requests
 
 
 st.set_page_config(page_title="Collections Assessment Data Exploration App",
@@ -22,11 +22,15 @@ def get_text(url):
 st.title("Assessment Snapshot")
 st.subheader("Assessment Snapshot is a tool for exploring collections assessment data exported from ArchivesSpace.")
 
-intro = get_text(intro_url)
-conclusion = get_text(conclusion_url)
+##intro = get_text(intro_url)
+##conclusion = get_text(conclusion_url)
+intro = "This is a prototype of a Streamlit app for exploring collections assessment data exported from ArchivesSpace, an open-source collections management system for archives. You can apply specific ratings criteria using the filters on the left, then view summary statistics and assessment records below. If you want to save the matching records, you can download them in a CSV with only the columns you need."
+conclusion_1 = "*Due to the customizable nature of the ArchivesSpace assessment module and its use as an internal collections management tool, I've used fake data and made some assumptions about how people collect and use it (e.g., surveyed extent units are in cubic feet).*"
+conclusion_2 = "*Assessment Snapshot was made by Adam Gray (me), a freelance metadata and digital archivist. You can contact me at a d g r a y 9 8 7 at gmail dot com. I would love to hear from you. If you want to check out or reuse (and improve!) the code, it's [here](https://github.com/adgray987/collections-assessment-app).*"
 st.markdown(intro)
 with st.expander("About this project"):
-    st.markdown(conclusion)
+    st.markdown(conclusion_1)
+    st.markdown(conclusion_2)
 
 #---Get data
 data = pd.read_csv(sample_file, header=3)
