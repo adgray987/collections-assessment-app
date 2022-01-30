@@ -1,6 +1,6 @@
 Libraries, archives, and museums collect data about the stuff on their shelves (and drives) using a type of survey called a *collections assessment*. They use this data to understand their backlogs of "unprocessed" material and make data-informed decisions about which materials they should prioritize for preservation and processing, and how to reduce their backlogs to better serve their users.
 
-About the data:  
+About the data  
 Due to the customizable nature of the ArchivesSpace assessment module and its use as an internal collections management tool, I've used fake data and made some assumptions about how people collect and use it (e.g., surveyed extent units are in cubic feet).
 
 *Assessment Snapshot was made by Adam Gray (me), a freelance metadata and digital archivist. You can contact me at a d g r a y 9 8 7 at gmail dot com. I would love to hear from you. If you want to check out or reuse (and improve!) the code, it's [here](https://github.com/adgray987/collections-assessment-app).*
