@@ -40,7 +40,7 @@ def load_data(csv):
     assessment.rename(columns=new_names, inplace=True)
 # Trim and collapse whitespace for ALL columns of dtype 'object' (i.e. strings)
     text_cols = list(assessment.select_dtypes(include='object').columns)
-    assessment[text_cols] = assessment.select_dtypes(include='object').apply(lambda x: x.str.replace(r'\s+',' ').str.strip())
+    assessment[text_cols] = assessment.select_dtypes(include='object').apply(lambda x: x.str.replace(r'\s+',' ', regex=True).str.strip())
     assessment["Purpose"] = assessment["Purpose"].str.title()
     return assessment
 
@@ -51,13 +51,13 @@ def make_slider(name):
                                   min_rating, max_rating, (min_rating, max_rating))
     return option
 
-def make_size_slider(name, tip):
-    min_rating = int(df[name].min())
-    max_rating = int(df[name].max())
-    option = st.sidebar.slider(f"{name}",
-                                  min_rating, max_rating, (min_rating, max_rating),
-                               help=tip)
-    return option
+# def make_size_slider(name, tip):
+#     min_rating = int(df[name].min())
+#     max_rating = int(df[name].max())
+#     option = st.sidebar.slider(f"{name}",
+#                                   min_rating, max_rating, (min_rating, max_rating),
+#                                help=tip)
+#     return option
 
 #@st.cache
 def get_values(tup):
