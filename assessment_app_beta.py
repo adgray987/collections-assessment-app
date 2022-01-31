@@ -8,7 +8,8 @@ import requests
 st.set_page_config(page_title="Collections Assessment Data Exploration App",
                    layout="wide"
                    )
-sample_file = "https://raw.githubusercontent.com/adgray987/collections-assessment-eda/main/data_raw/assessment_list_report.csv"
+#sample_file = "https://raw.githubusercontent.com/adgray987/collections-assessment-eda/main/data_raw/assessment_list_report.csv"
+sample_file = "https://raw.githubusercontent.com/adgray987/collections-assessment-app/main/assessment_list_report.csv"
 intro_url = "https://raw.githubusercontent.com/adgray987/collections-assessment-app/main/intro_text.txt"
 conclusion_url = "https://raw.githubusercontent.com/adgray987/collections-assessment-app/main/conclusion_text.txt"
 
@@ -157,19 +158,19 @@ data = [(1,2,3,4,5,6)]
 ratings_counts = pd.DataFrame(data,columns=ratings_names[:-1])
 for name in ratings_names[:-1]:
     ratings_counts[name] = subset[name].value_counts(sort=False)
-    
-r1, r2, r3, r4, r5, r6 = [subset[ratings_names[0]].value_counts(sort=False), 
+
+r1, r2, r3, r4, r5, r6 = [subset[ratings_names[0]].value_counts(sort=False),
                           subset[ratings_names[1]].value_counts(sort=False),
                           subset[ratings_names[2]].value_counts(sort=False),
-                          subset[ratings_names[3]].value_counts(sort=False), 
+                          subset[ratings_names[3]].value_counts(sort=False),
                           subset[ratings_names[4]].value_counts(sort=False),
                           subset[ratings_names[5]].value_counts(sort=False)]
 
-ratings_counts = pd.DataFrame({ratings_names[0] : r1, 
+ratings_counts = pd.DataFrame({ratings_names[0] : r1,
                                 ratings_names[1] : r2,
-                                ratings_names[2] : r3, 
+                                ratings_names[2] : r3,
                                 ratings_names[4] : r4,
-                                ratings_names[5] : r5, 
+                                ratings_names[5] : r5,
                                 ratings_names[6] : r6}, index=[1,2,3,4,5])
 
 ratings_counts_transposed = ratings_counts.T.reset_index(drop=False)
@@ -246,5 +247,5 @@ with download:
     st.download_button(
         label="Download CSV", data=csv_data,
         file_name="assessment_eda_example.csv", mime="text/csv")
-    
+
 st.write(subset[column_picker])
