@@ -1,3 +1,4 @@
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/adgray987/collections-assessment-app/main/assessment_app_beta.py)
 # Assessment Snapshot
 
 Assessment Snapshot is a prototype of a Streamlit app for exploring collections assessment data exported from ArchivesSpace, an open-source collections management system for archives. You can apply specific ratings criteria using the filters on the left, then view summary statistics and assessment records below. If you want to save the matching records, you can download them in a CSV with only the columns you need.
